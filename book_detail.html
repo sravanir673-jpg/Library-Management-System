@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <div class="card shadow p-4">
+
+        <h1>{{ book.title }}</h1>
+
+        <hr>
+
+        <h4>Author</h4>
+        <p>{{ book.author }}</p>
+
+        <h4>Description</h4>
+        <p>{{ book.description }}</p>
+
+        <h4>Status</h4>
+
+        {% if book.available %}
+        <span class="badge bg-success">Available</span>
+        {% else %}
+        <span class="badge bg-danger">Issued</span>
+        {% endif %}
+
+        <br><br>
+
+        <a href="/books/" class="btn btn-primary">⬅ Back to Books</a>
+
+    </div>
+</div>
+
+{% endblock %}
